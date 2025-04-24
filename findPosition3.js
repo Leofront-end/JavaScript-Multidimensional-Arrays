@@ -1,5 +1,8 @@
 function isPositionStrategic(board, row, col) {
-    return ((row > 0 && board[row - 1][col] === 'E') || (col > 0 && board[row][col - 1] === 'E') || (col > 0 && board[row][col+1] === 'E')
+    return ((row > 0 && board[row - 1][col] === 'E') ||
+     (col > 0 && board[row][col - 1] === 'E') ||
+     (col > board[row].length - 1 && board[row][col+1] === 'E') ||
+     (row < board.length - 1 && board[row + 1][col] === 'E')
             // TODO: Complete the remaining conditions for down, left, and right
         );
 }
